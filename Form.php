@@ -52,29 +52,29 @@ class Form {
 		static::$values = $values;
 	}
 
-	public static function open($action='', $method='POST'){
-		return "<form action='{$action}' method='{$method}' >";
+	public static function open($action = ''){
+		return new Element\Form(true, $action);
 	}
 
 	public static function close(){
-		return "</form>";
+		return new Element\Form(false);
 	}
 
 	// Basic inputs
 	public static function text($name){
-		return new Element\Basic($name, 'text');
+		return new Element\Input($name, 'text');
 	}
 
 	public static function email($name){
-		return new Element\Basic($name, 'email');
+		return new Element\Input($name, 'email');
 	}
 
 	public static function password($name){
-		return new Element\Basic($name, 'password');
+		return new Element\Input($name, 'password');
 	}
 
 	public static function number($name){
-		return new Element\Basic($name, 'number');
+		return new Element\Input($name, 'number');
 	}
 	
 	public static function textarea($name){

@@ -1,8 +1,8 @@
 <?php
 
-namespace Formz\Element;
+namespace formz\Element;
 
-abstract class Element {
+class Element {
 
 	// Basic field attributes
 	public $attributes = array();

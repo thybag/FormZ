@@ -1,6 +1,6 @@
 <?php
 
-namespace Formz\Element;
+namespace formz\Element;
 
 class Select extends Input{
 	// Options array

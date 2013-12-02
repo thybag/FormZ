@@ -1,6 +1,6 @@
 <?php
 
-namespace Formz\Element;
+namespace formz\Element;
 
 class Input extends Element {
 
@@ -8,6 +8,7 @@ class Input extends Element {
 	public $name = '';
 	public $type = null;
 	public $default = '';
+	public $required = false;
 
 	// New field needs name (type is kinda optional)
 	public function __construct($name, $type = 'text'){
@@ -23,6 +24,17 @@ class Input extends Element {
 	 */
 	public function defaultValue($value){
 		$this->default = $value;
+		return $this;
+	}
+
+	/**
+	 * set field to be required
+	 *
+	 * @param $required true|false (no option = true)
+	 * @return FormElement
+	 */
+	public function required($required = true){
+		$this->required = $required;
 		return $this;
 	}
 
@@ -48,7 +60,6 @@ class Input extends Element {
 	 * get element value
 	 */
 	protected function getValue(){
-
 		$val = false;
 		// get val
 		if(\formz\Form::$autoPopulate && isset(\formz\Form::$values[$this->name])){

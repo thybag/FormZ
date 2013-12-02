@@ -1,6 +1,6 @@
 <?php
 
-namespace Formz\Element;
+namespace formz\Element;
 
 class TextArea extends Input{
 
