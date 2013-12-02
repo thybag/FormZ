@@ -2,7 +2,7 @@
 
 namespace Formz\Element;
 
-class TextArea extends Basic{
+class TextArea extends Input{
 
 	/**
 	 * generate element markup

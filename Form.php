@@ -52,11 +52,11 @@ class Form {
 		static::$values = $values;
 	}
 
-	public static function form($action, $method='POST'){
+	public static function open($action='', $method='POST'){
 		return "<form action='{$action}' method='{$method}' >";
 	}
 
-	public static function formEnd(){
+	public static function close(){
 		return "</form>";
 	}
 

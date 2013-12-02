@@ -2,7 +2,7 @@
 
 namespace Formz\Element;
 
-class Select extends Basic{
+class Select extends Input{
 	// Options array
 	public $options = array();
 

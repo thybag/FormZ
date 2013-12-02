@@ -2,33 +2,17 @@
 
 namespace Formz\Element;
 
-class Basic {
+class Input extends Element {
 
 	// Basic field attributes
 	public $name = '';
 	public $type = null;
-	public $attributes = array();
 	public $default = '';
 
 	// New field needs name (type is kinda optional)
 	public function __construct($name, $type = 'text'){
 		$this->name = $name;
 		$this->type = $type;
-	}
-
-	/**
-	 * render form element
-	 *
-	 * @param show true|false - output directly to screen instead of returning (false = default)
-	 * @return form markup 
-	 */
-	public function render($show = false){
-		$markup = $this->build();
-
-		// If show is true, output html
-		if($show) echo $markup;
-
-		return $markup;
 	}
 
 	/**
@@ -39,17 +23,6 @@ class Basic {
 	 */
 	public function defaultValue($value){
 		$this->default = $value;
-		return $this;
-	}
-
-	/**
-	 * set attributes value (can be overwritten by Form::populate();)
-	 *
-	 * @param $attrs array of attributes ('id'=>'bla')
-	 * @return FormElement
-	 */
-	public function attributes($attrs = array()){
-		$this->attributes = $attrs;
 		return $this;
 	}
 
@@ -78,8 +51,8 @@ class Basic {
 
 		$val = false;
 		// get val
-		if(\Formz\Form::$autoPopulate && isset(\Formz\Form::$values[$this->name])){
-			$val = \Formz\Form::$values[$this->name];
+		if(\formz\Form::$autoPopulate && isset(\formz\Form::$values[$this->name])){
+			$val = \formz\Form::$values[$this->name];
 		}elseif($this->default !== ''){
 			$val = $this->default;
 		}
@@ -87,18 +60,4 @@ class Basic {
 		// Don't trust the value, as it could be direct from $_POST
 		return htmlspecialchars($val);
 	}
-
-	/**
-	 * Convert attributes to string
-	 */
-	protected function attributesToString(){
-		$string = '';
-
-		foreach($this->attributes as $key => $value){
-			$string .=" {$key}='{$value}'";
-		}
-
-		return $string;
-	}
-
 }
