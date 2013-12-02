@@ -1,4 +1,4 @@
-<?php namespace Formz;
+<?php namespace formz;
 
 /**
  * FormZ a set of simple PHP form helpers
