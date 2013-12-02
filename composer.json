@@ -11,6 +11,6 @@
 
     },
     "autoload":{
-        "psr-0": {"FormZ\\": "/"}
+        "psr-0": {"Formz\\": "/"}
     }
 }
