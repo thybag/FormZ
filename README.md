@@ -10,7 +10,7 @@ FormZ can be installed via composer using:
 
 Once composer has installed the library, simply include the standard composer autoloader in to your code.
 
-   require 'vendor/autoload.php'
+    require 'vendor/autoload.php'
 
 ### Usage Examples
 
@@ -21,7 +21,6 @@ Once composer has installed the library, simply include the standard composer au
 	Form::open("/somthing")->attributes(array("class"=>"test"))->render(true);
 
 	// Create a required text field with default value of "bob"**
-
 	Form::text("name")
 	 	->attributes(array('required'=>'required'))
 	 	->defaultValue("Bob")
@@ -29,7 +28,6 @@ Once composer has installed the library, simply include the standard composer au
  
 	// Select box with list of cows, css class cow_selector 
 	// and default selection of Dexter**
-
 	Form::select("cow")
 		->options(array(
 			'A' => 'Angus',
