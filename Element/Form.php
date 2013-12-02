@@ -4,7 +4,7 @@ namespace formz\Element;
 
 class Form extends Element {
 
-	public $method = '';
+	public $method = 'POST';
 	public $action = '';
 
 	public $open;

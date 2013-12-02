@@ -2,16 +2,33 @@
 
 A Simple Stand-alone PHP Form Helper
 
+## Installtion
+
+FormZ can be installed via composer using:
+
+    composer require thybag/formz:dev-master
+
+Once composer has installed the library, simply include the standard composer autoloader in to your code.
+
+   require 'vendor/autoload.php'
+
 ### Usage Examples
 
-**Create a required text field with default value of "bob"**
+	// Make Form refers to formz/Form
+	use formz\Form;
 
-	 Form::text("name")
+	//Open form
+	Form::open("/somthing")->attributes(array("class"=>"test"))->render(true);
+
+	// Create a required text field with default value of "bob"**
+
+	Form::text("name")
 	 	->attributes(array('required'=>'required'))
 	 	->defaultValue("Bob")
 	 	->render(true);
  
-**Select box with list of cows, css class cow_selector and default selection of Dexter**
+	// Select box with list of cows, css class cow_selector 
+	// and default selection of Dexter**
 
 	Form::select("cow")
 		->options(array(
@@ -24,6 +41,8 @@ A Simple Stand-alone PHP Form Helper
 		->defaultValue('D')
 		->render(true);
 
-**Populate above fields from post values**
+	Form::close()->render(true);
+
+You can have the form automatically populated from post data by calling the following before the form methods
 
 	Form::populate($_POST);
