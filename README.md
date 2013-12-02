@@ -2,7 +2,7 @@
 
 A Simple Stand-alone PHP Form Helper
 
-## Usage Examples
+### Usage Examples
 
 **Create a required text field with default value of "bob"**
 
