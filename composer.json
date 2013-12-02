@@ -1,0 +1,13 @@
+{
+    "name": "thybag/formz",
+    "description": "A Simple Stand-alone PHP Form Helper",
+    "authors": [
+        {
+            "name": "Carl Saggs",
+            "email": "carl@userbag.co.uk"
+        }
+    ],
+    "require": {
+
+    }
+}
