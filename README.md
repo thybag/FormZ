@@ -2,16 +2,16 @@
 
 A Simple Stand-alone PHP Form Helper
 
-# Usage Examples
+## Usage Examples
 
-## Required Text field with default value of "bob"
+**Create a required text field with default value of "bob"**
 
 	 Form::text("name")
 	 	->attributes(array('required'=>'required'))
 	 	->defaultValue("Bob")
 	 	->render(true);
  
-  ## Select box with list of cows, css class cow_selector and default selection of Dexter
+**Select box with list of cows, css class cow_selector and default selection of Dexter**
 
 	Form::select("cow")
 		->options(array(
@@ -24,6 +24,6 @@ A Simple Stand-alone PHP Form Helper
 		->defaultValue('D')
 		->render(true);
 
-## Populate above fields from post values
+**Populate above fields from post values**
 
 	Form::populate($_POST);
