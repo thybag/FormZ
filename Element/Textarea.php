@@ -12,7 +12,8 @@ class TextArea extends Input{
 		$attributes = $this->attributesToString();
 
 		// get value
-		$value = (!$value) ? '' : $this->getValue();
+		$value = $this->getValue();
+		$value = (!$value) ? '' : $value;
 		
 		// create markup
 		return "<textarea name='{$this->name}' {$attributes}>{$value}</textarea>";
