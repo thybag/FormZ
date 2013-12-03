@@ -25,7 +25,7 @@ class Element {
 	/**
 	 * set attributes value (can be overwritten by Form::populate();)
 	 *
-	 * @param $attrs array of attributes ('id'=>'bla')
+	 * @param $attrs array of attributes ('id'=>'bla') or string
 	 * @return FormElement
 	 */
 	public function attributes($attrs = array()){
@@ -44,8 +44,12 @@ class Element {
 	 * Convert attributes to string
 	 */
 	protected function attributesToString(){
-		$string = '';
 
+		// string = output directly
+		if(!is_array($this->attributes)) return $this->attributes;
+
+		// else do array
+		$string = '';
 		foreach($this->attributes as $key => $value){
 			$string .=" {$key}='{$value}'";
 		}
