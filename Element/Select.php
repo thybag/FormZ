@@ -24,7 +24,7 @@ class Select extends Input{
 		$attributes = $this->attributesToString();
 		$options = $this->optionsToString();
 
-		return "<select name='{$this->name}' $attributes >\n".$options."</select>";
+		return "<select name='{$this->name}' {$attributes} >\n".$options."</select>";
 	}
 
 	/**

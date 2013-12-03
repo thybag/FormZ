@@ -77,6 +77,10 @@ class Form {
 		return new Element\Input($name, 'number');
 	}
 	
+	public static function checkbox($name){
+		return new Element\Checkbox($name, 'checkbox');
+	}
+
 	public static function textarea($name){
 		return new Element\TextArea($name, 'number');
 	}
