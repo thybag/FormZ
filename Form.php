@@ -76,7 +76,13 @@ class Form {
 	public static function number($name){
 		return new Element\Input($name, 'number');
 	}
+
+	public static function tel($name){
+		return new Element\Input($name, 'tel');
+	}
 	
+	// Other types
+
 	public static function checkbox($name){
 		return new Element\Checkbox($name, 'checkbox');
 	}
@@ -85,7 +91,6 @@ class Form {
 		return new Element\TextArea($name, 'number');
 	}
 
-	// Build Select
 	public static function select($name){
 		return new Element\Select($name, 'select');
 	}
