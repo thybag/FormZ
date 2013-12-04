@@ -83,6 +83,11 @@ class Form {
 	
 	// Other types
 
+	public static function radio($name){
+		return new Element\Radiobutton($name, 'checkbox');
+	}
+
+
 	public static function checkbox($name){
 		return new Element\Checkbox($name, 'checkbox');
 	}
