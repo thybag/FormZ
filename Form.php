@@ -93,7 +93,7 @@ class Form {
 	}
 
 	public static function textarea($name){
-		return new Element\TextArea($name, 'number');
+		return new Element\Textarea($name, 'number');
 	}
 
 	public static function select($name){
