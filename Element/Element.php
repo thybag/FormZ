@@ -5,7 +5,9 @@ namespace formz\Element;
 class Element {
 
 	// Basic field attributes
+	public $id = '';
 	public $attributes = array();
+	public $classes = '';
 
 	/**
 	 * render form element

@@ -5,12 +5,11 @@ namespace formz\Element;
 class Input extends Element {
 
 	// Basic field attributes
-	public $id = '';
 	public $name = '';
 	public $type = null;
 	public $default = '';
 	public $required = false;
-	public $classes = '';
+	
 
 	// New field needs name (type is kinda optional)
 	public function __construct($name, $type = 'text'){
