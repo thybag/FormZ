@@ -34,6 +34,28 @@ class Element {
 	}
 
 	/**
+	 * set id value
+	 *
+	 * @param $id string - Id of element
+	 * @return FormElement
+	 */
+	public function id($id){
+		$this->id = $id;
+		return $this;
+	}
+
+	/**
+	 * set class value 
+	 *
+	 * @param $class string of class names
+	 * @return FormElement
+	 */
+	public function classes($class){
+		$this->classes = $class;
+		return $this;
+	}
+
+	/**
 	 * generate element markup
 	 */
 	protected function build(){
@@ -44,17 +66,25 @@ class Element {
 	 * Convert attributes to string
 	 */
 	protected function attributesToString(){
+		// Get class & id markup
+		$class = ($this->classes == '') ? '' : "class='{$this->classes}' ";
+		$id = ($this->id == '') ? '' : "id='{$this->id}' ";
 
-		// string = output directly
-		if(!is_array($this->attributes)) return $this->attributes;
+		// Set in to attributes
+		$attributes = $id.$class;
 
-		// else do array
-		$string = '';
-		foreach($this->attributes as $key => $value){
-			$string .=" {$key}='{$value}'";
+		// extract $this->attributes
+		if(is_array($this->attributes)){
+			// Add each attribute to string
+			foreach($this->attributes as $key => $value){
+				$attributes .=" {$key}='{$value}'";
+			}
+		}else{
+			// string = add directly
+			$attributes .= $this->attributes;
 		}
 
-		return $string;
+		return $attributes;
 	}
 
 }

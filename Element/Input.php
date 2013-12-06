@@ -40,15 +40,6 @@ class Input extends Element {
 		return $this;
 	}
 
-	public function id($id){
-		$this->id = $id;
-		return $this;
-	}
-	public function classes($class){
-		$this->classes = $class;
-		return $this;
-	}
-
 	/**
 	 * generate element markup
 	 */
@@ -77,10 +68,8 @@ class Input extends Element {
 
 		// Add additional attributes (required, class, id)
 		$required = ($this->required) ? "required='required' " : '';
-		$class = ($this->classes == '') ? '' : "class='{$this->classes}' ";
-		$id = ($this->id == '') ? '' : "id='{$this->id}' ";
 
-		return $id.$required.$class.$attributes;
+		return $required.$attributes;
 	}
 	/**
 	 * get element value
