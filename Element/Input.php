@@ -86,7 +86,7 @@ class Input extends Element {
 	 * get element value
 	 */
 	protected function getValue(){
-		$val = false;
+		$val = null;
 		// get val
 		if(\formz\Form::$autoPopulate && isset(\formz\Form::$values[$this->name])){
 			$val = \formz\Form::$values[$this->name];
@@ -95,6 +95,6 @@ class Input extends Element {
 		}
 
 		// Don't trust the value, as it could be direct from $_POST
-		return htmlspecialchars($val);
+		return ($val === null) ? null : htmlspecialchars($val);
 	}
 }

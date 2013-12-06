@@ -31,7 +31,7 @@ class Radiobutton extends Select{
 		$html = '';
 
 		foreach($this->options as $value => $label){
-			$html .= "<label {$attributes}> <input type='radio' name='{$this->name}' value='{$value}' ".(($value == $selected) ? "checked='checked'" :"" )." /> {$label} </label>\n";
+			$html .= "<label {$attributes}> <input type='radio' name='{$this->name}' value='{$value}' ".(($value == $selected && $selected !== null) ? "checked='checked'" :"" )." /> {$label} </label>\n";
 		}
 
 		return $html;

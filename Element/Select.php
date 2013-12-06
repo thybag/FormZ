@@ -31,13 +31,11 @@ class Select extends Input{
 	 * Convert options to string + select active
 	 */
 	protected function optionsToString(){
-
+		$html = '';
 		$selected = $this->getValue();
 
-		$html = '';
-
 		foreach($this->options as $value => $label){
-			$html .= "<option value='{$value}' ". (($value == $selected) ? "selected='selected'" :"" ) .">{$label}</option>\n";
+			$html .= "<option value='{$value}' ". (($value == $selected && $selected !== null) ? "selected='selected'" :"" ) .">{$label}</option>\n";
 		}
 
 		return $html;
