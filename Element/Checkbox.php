@@ -14,10 +14,15 @@ class Checkbox extends Input{
 		// get attributes
 		$attributes = $this->attributesToString();
 
-		// get value
-		//$value = (!$value) ? '' : $this->getValue();
-
 		$checked = ($this->checked) ? 'checked="checked"' : '';
+
+		// force to checked if submited data contains this
+		$postvalue = $this->getValue();
+		if($postvalue  !== null){
+			$checked = 'checked="checked"';
+		}
+		
+	
 		
 		// create markup
 		return "<input type='{$this->type}' value='{$this->value}' name='{$this->name}' {$attributes} {$checked}/>";
