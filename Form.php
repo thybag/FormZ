@@ -65,6 +65,10 @@ class Form {
 		return new Element\Input($name, 'text');
 	}
 
+	public static function hidden($name){
+		return new Element\Input($name, 'hidden');
+	}
+
 	public static function email($name){
 		return new Element\Input($name, 'email');
 	}

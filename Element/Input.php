@@ -48,14 +48,13 @@ class Input extends Element {
 
 		// get value
 		$value = $this->getValue();
-		if(!$value){ 
+
+		if($value === null){ 
 			$valueHTML = '';
 		}else{
 			$valueHTML = " value='{$value}'";
 		}
-
 		
-
 		// create markup
 		return "<input type='{$this->type}' name='{$this->name}' {$valueHTML} {$attributes} />";
 	}
